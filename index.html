@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TaxiHelp | Регистрация</title>
+</head>
+
+<script src="scripts/script.js"></script>
+<script src="scripts/generate_options.js"></script>
+
+<body>
+    <div class="container">
+
+        <form class="form-register" method="POST" action="" enctype='multipart/form-data'>
+            
+            <div class="title-of-register">
+                <div class="title">
+                    <h1>Регистрация</h1>
+                    <h2 id="secondary-title">Выбор вакансии</h2>
+                </div>
+                <div class="count-of-step">
+                    <h3>Шаг</h3>
+                    <h1 id="count-of-step">1</h1>
+                </div>
+            </div>
+
+            <div class="step-of-register active" name-of-step="Выбор вакансии" count-of-step="1">
+
+                <div class="form-item">
+                    <label class="label-for-elem" for="">Регион</label>
+                    <select class="register-elem select company-required" name="region" id="user-region" required>
+                        <option value="" disabled selected hidden>Выберите регион</option>
+                        <option value="msk">Москва и область</option>
+                        <option value="spb">Санкт-Петербург и область</option>
+                        <option value="rst">Ростов-на-Дону</option>
+                        <option value="rst-region">Ростовская область</option>
+                        <option value="krd">Краснодар</option>
+                        <option value="krd-region">Краснодарский край</option>
+                        <option value="other-region">Другой регион</option>
+                    </select>
+                </div>
+
+                <div class="form-item">
+                    <label class="label-for-elem" for="">Вакансия</label>
+                    <select class="register-elem select" name="vacancy" id="vac_select" required>
+                        <option value="" disabled selected hidden>Выберите вашу вакансию</option>
+                        <option value="car-driver">Водитель с легковым авто </option>
+                        <option value="truck-driver">Водитель с грузовым авто </option>
+                        <option value="сourier">Курьер без автомобиля </option>
+                    </select>
+                </div>
+
+                <div class="form-item driver_info">
+                    <label class="label-for-elem" for="">Водительское удостоверение</label>
+                    <select class="register-elem select company-required" name="driver-license" id="">
+                        <option value="" disabled selected hidden>Выберите регион получения удостоверения</option>
+                        <option value="rus">Россия</option>
+                        <option value="bel">Беларусь</option>
+                        <option value="kgz">Кыргыстан</option>
+                        <option value="kaz">Казахстан</option>
+                        <option value="abh">Абхазия</option>
+                        <option value="yos">Южная Осетия</option>
+                        <option value="oth">Другая страна</option>
+                    </select>
+                </div>
+
+                <div class="form-item driver_info">
+                    <label class="label-for-elem" for="">Лицензия такси</label>
+                    <select class="register-elem select company-required" name="taxi-license" id="">
+                        <option value="" disabled selected hidden>Выберите соответствующий ответ</option>
+                        <option value="yes">Есть</option>
+                        <option value="no">Нет</option>
+                    </select>
+                </div>
+
+                <div class="form-item driver_info">
+                    <label class="label-for-elem" for="">Год выпуска автомобиля</label>
+                    <select class="register-elem select generated company-required" name="car-year" max="2021" min="1990" step="1" abbreviation="г.">
+                        <option value="" disabled selected hidden>Выберите год</option>
+                    </select>
+                </div>
+
+                <div class="form-item driver_info" name="type-of-orders">
+                    <label class="label-for-elem" for="">Какие заказы хотите выполнять?</label>
+                    <select class="register-elem select" name="" id="">
+                        <option value="" disabled selected hidden>Выберите соответствующий ответ</option>
+                        <option value="taxi-dil">Такси и доставку по желанию </option>
+                        <option value="only-dil">Только доставку </option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            
+            <div class="step-of-register" name-of-step="Информация для подключения" count-of-step="2">
+
+                <div class="form-item">
+                    <label class="label-for-elem telephone" for="">Телефон</label>
+                    <input class="register-elem input telephone phone rus" required type="tel" placeholder="+7 (___) _______">
+                </div>
+
+                <div class="form-item">
+                    <input class="chackbox-register" type="checkbox" id="whatsapp">
+                    <label class="label-checkbox" for="whatsapp">WhatsApp на другом номере</label>
+                </div>
+
+                <div class="form-item whatsapp">
+                    <label class="label-for-elem whatsapp" for="">Телефон (WhatsApp)</label>
+                    <input class="register-elem input whatsapp phone" id="whatsapp-input" type="tel" placeholder="Введите номер телефона...">
+                </div>
+    
+                <div class="form-item">
+                    <label class="label-for-elem" for="">ФИО</label>
+                    <input class="register-elem input" required type="text" placeholder="Введите ваше полное имя...">
+                </div>
+    
+                <div class="form-item">
+                    <label class="label-for-elem" for="">Дата рождения</label>
+                    <input class="register-elem input" required type="date">
+                </div>
+
+            </div>
+
+            <div class="step-of-register" name-of-step="Дополнительная информация" count-of-step="3">
+
+                <div class="form-item truck">
+                    <label class="label-for-elem" for="">Грузоподъёмность</label>
+                    <select class="register-elem select generated truck" name="" max="3500" min="300" step="50"
+                        abbreviation="кг.">
+                        <option value="" disabled selected hidden>Выберите соответствующий ответ</option>
+                    </select>
+                </div>
+
+                <div class="form-item truck">
+                    <label class="label-for-elem" for="">Длина грузового отсека</label>
+                    <select class="register-elem select generated truck" name="" max="400" min="170" step="10"
+                        abbreviation="см.">
+                        <option value="" disabled selected hidden>Выберите соответствующий ответ</option>
+                    </select>
+                </div>
+
+                <div class="form-item truck">
+                    <label class="label-for-elem" for="">Ширина грузового отсека</label>
+                    <select class="register-elem select generated truck" name="" max="220" min="100" step="10"
+                        abbreviation="см.">
+                        <option value="" disabled selected hidden>Выберите соответствующий ответ</option>
+                    </select>
+                </div>
+
+                <div class="form-item truck">
+                    <label class="label-for-elem" for="">Высота грузового отсека</label>
+                    <select class="register-elem select generated truck" name="" max="250" min="90" step="10"
+                        abbreviation="см.">
+                        <option value="" disabled selected hidden>Выберите соответствующий ответ</option>
+                    </select>
+                </div>
+
+                <div class="form-item truck">
+                    <label class="label-for-elem" for="">Количество грузчиков, включая вас</label>
+                    <select class="register-elem select generated truck" name="" max="2" min="0" step="1"
+                        abbreviation="">
+                        <option value="" disabled selected hidden>Выберите соответствующий ответ</option>
+                    </select>
+                </div>
+                <div class="message_truck active">
+                    Вы не выбрали вакансию "Водитель с грузовым авто". Переходите на следующий шаг
+                </div>
+
+            </div>
+
+            <div class="step-of-register" name-of-step="Выбор систем для подключения" count-of-step="4">
+
+                <div class="form-item system-for-connect city-mobil">
+                    <input type="checkbox" name="city-mobil" id="city-mobil">
+                    <label class="system-connection" for="city-mobil">
+                        Ситимобил Такси
+                    </label>
+                </div>
+                
+                <div class="form-item system-for-connect city-mobil-delivery">
+                    <input type="checkbox" name="city-mobil-delivery" id="city-mobil-delivery">
+                    <label class="system-connection" for="city-mobil-delivery">
+                        Ситимобил Доставка
+                    </label>
+                </div>
+                
+                <div class="form-item system-for-connect yandex-pro-taxi">
+                    <input type="checkbox" name="yandex-pro-taxi" id="yandex-pro-taxi">
+                    <label class="system-connection" for="yandex-pro-taxi">
+                        Яндекс.Про Такси
+                    </label>
+                </div>
+                
+                <div class="form-item system-for-connect yandex-pro-delivery">
+                    <input type="checkbox" name="yandex-pro-delivery" id="yandex-pro-delivery">
+                    <label class="system-connection" for="yandex-pro-delivery">
+                        Яндекс.Про Доставка
+                    </label>
+                </div>
+                
+                <div class="form-item system-for-connect yandex-pro-truck">
+                    <input type="checkbox" name="yandex-pro-truck" id="yandex-pro-truck">
+                    <label class="system-connection" for="yandex-pro-truck">
+                        Яндекс.Про Грузовой
+                    </label>
+                </div>
+                
+                <div class="form-item system-for-connect rbt">
+                    <input type="checkbox" name="rbt" id="rbt">
+                    <label class="system-connection" for="rbt">
+                        Российская Биржа Такси
+                    </label>
+                </div>
+                
+                <div class="form-item system-for-connect sedi">
+                    <input type="checkbox" name="sedi" id="sedi">
+                    <label class="system-connection" for="sedi">
+                        Биржа заказов такси SeDi
+                    </label>
+                </div>
+                
+                </div>
+
+
+
+            <div class="step-of-register upload_photo" name-of-step="Загрузка фото" count-of-step="5">
+
+                
+                <div class="dialog for-all">
+
+                    <div class="form-item active">
+                        
+                        <div class="message left-side">
+                            Сделайте фотографию вашего водительского удостоверения с лицевой стороны, как это сделано в примере.
+                        </div>
+
+                        <div class="message left-side image">
+                            <img src="img/dialog/example.jpg" alt="">
+                        </div>
+
+                        <div class="message right-side photo-button">
+                            <div class="upload-photo-user">
+                                <input type="file" name="driver-license-frontside" id="photo-user_for-all-1" accept="image/x-png, image/gif, image/jpeg">
+                                <label for="photo-user_for-all-1" class="photo-user">
+                                    <img class="photo-user-icon" src="img/picture-icon.svg" alt="">
+                                    <div class="button_text">Добавить фото</div>
+                                </label>
+                            </div>
+
+                            <img class="user-photo" src="" alt="">
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-item">
+                        <div class="message left-side">
+                            Сделайте фотографию вашего СТС с данными вашего автомобиля, как это сделано в примере.
+                        </div>
+
+                        <div class="message left-side image">
+                            <img src="img/dialog/example.jpg" alt="">
+                        </div>
+
+                        <div class="message right-side photo-button">
+                            <div class="upload-photo-user">
+                                <input type="file" count="2" name="vehicle-registration-certificate-auto" id="photo-user_for-all-2" accept="image/x-png, image/gif, image/jpeg">
+                                <label for="photo-user_for-all-2" class="photo-user">
+                                    <img class="photo-user-icon" src="img/picture-icon.svg" alt="">
+                                    <div class="button_text">Добавить фото</div>
+                                </label>
+                            </div>
+
+                            <img class="user-photo" src="" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="dialog city-mobil"> 
+
+                    <div class="form-item">
+                        <div class="message left-side">
+                            Сделайте фотографию СТС с данными собственника, как это сделано в примере.
+                        </div>
+
+                        <div class="message left-side image">
+                            <img src="img/dialog/example.jpg" alt="">
+                        </div>
+
+                        <div class="message right-side photo-button">
+                            <div class="upload-photo-user">
+                                <input type="file" name="vehicle-registration-certificate-driver" id="photo-user_city-mobil-1" accept="image/x-png, image/gif, image/jpeg">
+                                <label for="photo-user_city-mobil-1" class="photo-user">
+                                    <img class="photo-user-icon" src="img/picture-icon.svg" alt="">
+                                    <div class="button_text">Добавить фото</div>
+                                </label>
+                            </div>
+
+                            <img class="user-photo" src="" alt="">
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="message left-side">
+                            Сделайте фотографию вашего водительского удостоверения с обратной стороны, как это сделано в примере.
+                        </div>
+
+                        <div class="message left-side image">
+                            <img src="img/dialog/example.jpg" alt="">
+                        </div>
+
+                        <div class="message right-side photo-button">
+                            <div class="upload-photo-user">
+                                <input type="file" name="driver-license-backside" id="photo-user_city-mobil-2" accept="image/x-png, image/gif, image/jpeg">
+                                <label for="photo-user_city-mobil-2" class="photo-user">
+                                    <img class="photo-user-icon" src="img/picture-icon.svg" alt="">
+                                    <div class="button_text">Добавить фото</div>
+                                </label>
+                            </div>
+
+                            <img class="user-photo" src="" alt="">
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="message left-side">
+                            Сделайте фотографию паспорта, как это сделано в примере. 
+                        </div>
+
+                        <div class="message left-side image">
+                            <img src="img/dialog/example.jpg" alt="">
+                        </div>
+
+                        <div class="message right-side photo-button">
+                            <div class="upload-photo-user">
+                                <input type="file" name="user-passport" id="photo-user_city-mobil-3" accept="image/x-png, image/gif, image/jpeg">
+                                <label for="photo-user_city-mobil-3" class="photo-user">
+                                    <img class="photo-user-icon" src="img/picture-icon.svg" alt="">
+                                    <div class="button_text">Добавить фото</div>
+                                </label>
+                            </div>
+
+                            <img class="user-photo" src="" alt="">
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="message left-side">
+                            Сделайте селфи с паспортом или с водительским удостоверением, как это сделано в примере.
+                        </div>
+
+                        <div class="message left-side image">
+                            <img src="img/dialog/example.jpg" alt="">
+                        </div>
+
+                        <div class="message right-side photo-button">
+                            <div class="upload-photo-user">
+                                <input type="file" name="selfie-with-document" id="photo-user_city-mobil-4" accept="image/x-png, image/gif, image/jpeg">
+                                <label for="photo-user_city-mobil-4" class="photo-user">
+                                    <img class="photo-user-icon" src="img/picture-icon.svg" alt="">
+                                    <div class="button_text">Добавить фото</div>
+                                </label>
+                            </div>
+
+                            <img class="user-photo" src="" alt="">
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="message left-side">
+                            Сделайте фотографию вашего авто спереди, как это сделано в примере.
+                        </div>
+
+                        <div class="message left-side image">
+                            <img src="img/dialog/example.jpg" alt="">
+                        </div>
+
+                        <div class="message right-side photo-button">
+                            <div class="upload-photo-user">
+                                <input type="file" name="" id="photo-user_city-mobil-5" accept="image/x-png, image/gif, image/jpeg">
+                                <label for="photo-user_city-mobil-5" class="photo-user">
+                                    <img class="photo-user-icon" src="img/picture-icon.svg" alt="">
+                                    <div class="button_text">Добавить фото</div>
+                                </label>
+                            </div>
+
+                            <img class="user-photo" src="" alt="">
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="message left-side">
+                            Сделайте фотографию вашего авто сзади, как это сделано в примере.
+                        </div>
+
+                        <div class="message left-side image">
+                            <img src="img/dialog/example.jpg" alt="">
+                        </div>
+
+                        <div class="message right-side photo-button">
+                            <div class="upload-photo-user">
+                                <input type="file" name="" id="photo-user_city-mobil-6" accept="image/x-png, image/gif, image/jpeg">
+                                <label for="photo-user_city-mobil-6" class="photo-user">
+                                    <img class="photo-user-icon" src="img/picture-icon.svg" alt="">
+                                    <div class="button_text">Добавить фото</div>
+                                </label>
+                            </div>
+
+                            <img class="user-photo" src="" alt="">
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="message left-side">
+                            Сделайте фотографию вашего авто справа, как это сделано в примере.
+                        </div>
+
+                        <div class="message left-side image">
+                            <img src="img/dialog/example.jpg" alt="">
+                        </div>
+
+                        <div class="message right-side photo-button">
+                            <div class="upload-photo-user">
+                                <input type="file" name="" id="photo-user_city-mobil-7" accept="image/x-png, image/gif, image/jpeg">
+                                <label for="photo-user_city-mobil-7" class="photo-user">
+                                    <img class="photo-user-icon" src="img/picture-icon.svg" alt="">
+                                    <div class="button_text">Добавить фото</div>
+                                </label>
+                            </div>
+
+                            <img class="user-photo" src="" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="dialog yandex-pro-taxi">
+                    <div class="form-item">
+                        <div class="message left-side">
+                            Сделайте фотографию вашего водительского удостоверения с обратной стороны, как это сделано в примере.
+                        </div>
+
+                        <div class="message left-side image">
+                            <img src="img/dialog/example.jpg" alt="">
+                        </div>
+
+                        <div class="message right-side photo-button">
+                            <div class="upload-photo-user">
+                                <input type="file" name="" id="photo-user_yandex-pro-taxi-1" accept="image/x-png, image/gif, image/jpeg">
+                                <label for="photo-user_yandex-pro-taxi-1" class="photo-user">
+                                    <img class="photo-user-icon" src="img/picture-icon.svg" alt="">
+                                    <div class="button_text">Добавить фото</div>
+                                </label>
+                            </div>
+
+                            <img class="user-photo" src="" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialog rbt">
+                    <div class="form-item">
+                        <div class="message left-side">
+                            Сделайте фотографию вашего водительского удостоверения с обратной стороны, как это сделано в примере.
+                        </div>
+
+                        <div class="message left-side image">
+                            <img src="img/dialog/example.jpg" alt="">
+                        </div>
+
+                        <div class="message right-side photo-button">
+                            <div class="upload-photo-user">
+                                <input type="file" name="" id="photo-user_rbt-1" accept="image/x-png, image/gif, image/jpeg">
+                                <label for="photo-user_rbt-1" class="photo-user">
+                                    <img class="photo-user-icon" src="img/picture-icon.svg" alt="">
+                                    <div class="button_text">Добавить фото</div>
+                                </label>
+                            </div>
+
+                            <img class="user-photo" src="" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+   
+
+            <div class="buttons-of-register">
+                <button type="submit" class="main-button form-button unactive">Отправить</button>
+                <div class="main-button step-button">Далее</div>
+            </div>
+
+
+
+
+        </form>
+
+    </div>
+</body>
+</html>

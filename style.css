@@ -1,0 +1,418 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    background: none;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.container {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+:root {
+    --main-color: #000000;
+    --opacity-color: rgba(0, 0, 0, 0.35);
+    --white-color: #FFFFFF;
+    --super-light-shadow: rgba(0, 0, 0, 0.10);
+    --grey-color: #ECECEC;
+}
+
+
+.form-register {
+    position: relative;
+    width: 50%;
+    height: 600px;
+    margin: 0 auto;
+
+
+    margin-top: 100px;
+}
+
+.title-of-register {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.count-of-step {
+    text-align: center;
+}
+
+.count-of-step h1 {
+    font-weight: 700;
+}
+
+.step-of-register {
+    width: 100%;
+    position: absolute;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.2s linear;
+}
+
+.upload_photo {
+    position: unset;
+}
+
+.step-of-register.active {
+    overflow: unset;
+    max-height: unset;
+    opacity: 1;
+    transition: 0.2s linear;
+}
+
+.form-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-item:last-child {
+    margin-bottom: 0;
+}
+
+.label-for-elem {
+    font-size: 12px;
+    font-weight: 700;
+    left: 10px;
+    top: -6px;
+    position: absolute;
+    padding: 0 5px;
+    background: var(--white-color);
+}
+
+.register-elem.select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(img/select-icon.svg) no-repeat right;
+    background-position-x: calc(100% - 10px);
+    padding-right: 30px;
+}
+
+.register-elem.select option {
+    color: var(--main-color);
+}
+
+.register-elem {
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 20px 10px 15px 10px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.form-item.whatsapp {
+    display: none;
+}
+
+.form-item.whatsapp.active {
+    display: block;
+}
+
+.register-elem.select:invalid,
+.register-elem.input::placeholder {
+    color: var(--opacity-color);
+}
+
+.register-elem.input.telephone {
+    padding-left: 48px;
+}
+
+.label-checkbox {
+    cursor: pointer;
+}
+
+.chackbox-register {
+    margin-right: 15px;
+}
+
+.label-for-elem.whatsapp::after,
+.label-for-elem.telephone::after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 12px;
+    width: 18px;
+    bottom: -27px;
+    border: 0.1px solid var(--super-light-shadow);
+    background-image: url(img/flag-of-russia.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.label-for-elem.whatsapp::after {
+    left: 10px;
+    height: 14px;
+    width: 14px;
+    border: none;
+    background-image: url(img/whatsapp-icon.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.register-elem.input.whatsapp {
+    padding-left: 48px;
+}
+
+.buttons-of-register {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons-of-register.last-step {
+    position: unset;
+    margin: 40px 0;
+}
+
+.main-button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    width: 240px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    font-weight: 700;
+    transition: 0.2s linear;
+}
+
+.main-button:hover {
+    background: var(--main-color);
+    color: var(--white-color);
+}
+
+.main-button.unactive {
+    display: none;
+}
+
+.secondary-button {
+    display: flex;
+    align-items: center;
+}
+
+.secondary-button {
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+.secondary-button.unactive {
+    opacity: 0.35;
+}
+
+.button-prev-icon {
+    margin-right: 15px;
+}
+
+.form-item.system-for-connect {
+    display: none;
+}
+
+.form-item.system-for-connect.active {
+    display: flex;
+}
+
+.form-item.system-for-connect input {
+    margin-right: 15px;
+}
+
+.dialog .form-item {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-bottom: 0;
+    transition: 0.2s linear;
+}
+
+.form-item.driver_info {
+    display: none;
+}
+
+.form-item.driver_info.active {
+    display: block;
+}
+
+.form-item.truck {
+    opacity: 0.4;
+}
+
+.form-item.truck.enabled {
+    opacity: 1;
+}
+
+.message_truck.active {
+    font-size: 20px;
+    text-align: center;
+    opacity: 1;
+}
+
+.message_truck {
+    opacity: 0;
+}
+
+.register-elem.select.generated.truck {
+    pointer-events: none;
+}
+
+.register-elem.select.generated.truck.required {
+    pointer-events: auto;
+}
+
+.dialog .form-item.active {
+    margin-top: 20px;
+    overflow: unset;
+    max-height: unset;
+    opacity: 1;
+    transition: 0.2s linear;
+}
+
+.dialog.for-all .form-item.active:first-child {
+    margin-top: 0;
+}
+
+.dialog .form-item .message {
+    transition: 0.1s linear;
+}
+
+.dialog .form-item .message .left-side {
+    transform: translateX(-10000px);
+}
+
+.dialog .form-item.active .message {
+    transform: translateX(0);
+}
+
+.message {
+    width: 75%;
+    background: var(--grey-color);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.message:last-child {
+    margin-bottom: 0;
+}
+
+.message.left-side {
+    margin-right: auto;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+}
+
+.message.right-side {
+    margin-left: auto;
+    border-radius: 5px;
+    border-bottom-right-radius: 0;
+}
+
+.message.photo-button,
+.message.image {
+    background: none;
+    padding: 0;
+}
+
+.user-photo,
+.message.left-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+}
+
+.user-photo {
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.upload-photo-user {
+    display: flex;
+    justify-content: flex-end;
+    transition: 0.1s linear;
+}
+
+.upload-photo-user.unactive {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.photo-user {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    border: 2px dotted var(--opacity-color);
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.photo-user-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.preloader {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+}
+
+.preloader img {
+    height: 80px;
+    filter: grayscale(1)
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 1240px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .form-register {
+        width: 100%;
+    }
+}
